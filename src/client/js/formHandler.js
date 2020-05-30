@@ -1,26 +1,24 @@
-function handleSubmit(event) {
-    event.preventDefault()
-
+export const handleSubmit = (event) => {
+    event.preventDefault();
+    const result = document.getElementById('result');
+    result.className = 'hidden';
+    const data = {};
     // check what text was put into the form field
-    const content = document.querySelector("input[name=format]:checked").value;
-    let formText = document.getElementById('text').value
-    // isURL = Client.isURL(formText);
-    if (content === "url") {
-        console.log("this is url");
+    const format = document.querySelector('input[name=format]:checked').value;
+    const clientInput = document.getElementById('text').value;
+    if (format === 'url') {
+        try {
+            new URL(clientInput);
+        } catch (_) {
+            alert('It is not valid URL');
+            return false;
+        }
+        data.url = clientInput;
+    } else {
+        data.text = clientInput;
     }
-
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8081/test', {
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({content: content, text: formText}),
-    });
-    // fetch('http://localhost:8081/test')
-    // .then(res => res.json())
-    // .then(function(res) {
-    //     document.getElementById('results').innerHTML = res.message
-    // })
+    Client.getAnalys('http://localhost:8081/analys', data)
+    .then(function(res) {
+        Client.updateUI(res);
+    })
 }
-
-export { handleSubmit }

@@ -9,7 +9,7 @@
     <body>
 
         <header>
-            <h1>Natural Language Processing</h1>
+            <h1><a href="javascript:history.go(0)">Natural Language Processing</a></h1>
         </header>
 
         <main>
@@ -27,12 +27,12 @@
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                    <textarea rows="4" id="text" placeholder="Enter a text or URL"></textarea>
+                    <textarea required rows="4" id="text" placeholder="Enter a text or URL"></textarea>
                     <input class="submit" type="submit" value="ANALYZE"">
                 </form>
             </section>
 
-            <section class="hidden">
+            <section id='result' class="hidden">
                 <div class="result-title">Submitted Text</div>
                 <div id='input_text'></div>
                 <div>
@@ -40,19 +40,19 @@
                     <table>
                         <tr>
                             <td>Polarity</td>
-                            <td></td>
+                            <td id="polar"></td>
                         </tr>
                         <tr>
                             <td>Polarity confidence</td>
-                            <td></td>
+                            <td id="polar_conf"></td>
                         </tr>
                         <tr>
                             <td>Subjectivity</td>
-                            <td></td>
+                            <td id="subject"></td>
                         </tr>
                         <tr>
                             <td>Subjectivity confidence</td>
-                            <td></td>
+                            <td id="subject_conf"></td>
                         </tr>
                     </table>
                 </div>
