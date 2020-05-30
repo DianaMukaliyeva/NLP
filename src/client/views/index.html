@@ -2,41 +2,65 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Natural Language Processing</title>
     </head>
 
     <body>
 
         <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
+            <h1>Natural Language Processing</h1>
         </header>
 
         <main>
             <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                <form class="flex-box" onsubmit="return Client.handleSubmit(event)">
+                    <h2>Sentiment Analysis</h2>
+                    <div>Select what type of text you are going to insert</div>
+                    <div>
+                        <label class="container">Text
+                            <input type="radio" name="format" value="text" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">URL
+                            <input type="radio" value="url" name="format">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <textarea rows="4" id="text" placeholder="Enter a text or URL"></textarea>
+                    <input class="submit" type="submit" value="ANALYZE"">
                 </form>
-            <section>
+            </section>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+            <section class="hidden">
+                <div class="result-title">Submitted Text</div>
+                <div id='input_text'></div>
+                <div>
+                    <div class="result-title">Results</div>
+                    <table>
+                        <tr>
+                            <td>Polarity</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Polarity confidence</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Subjectivity</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Subjectivity confidence</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
             </section>
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <p>NLP &#128515;</p>
         </footer>
 
     </body>
