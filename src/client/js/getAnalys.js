@@ -1,3 +1,8 @@
+/**
+ * function that send request to the server.
+ * @param {url} url address to our server
+ * @param {data} object example: {text: userInput} or {url: userInputUrl}
+ */
 export const getAnalys = async (url='', data={}) => {
     const request = await fetch(url, {
         method: 'POST',
