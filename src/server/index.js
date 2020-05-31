@@ -48,6 +48,6 @@ app.post('/analys', function (req, res) {
 })
 
 // Setup Server
-app.listen(8081, function () {
+app.listen(process.env.PORT || 8081, function () {
     console.log(`NLP app listening on port 8081!`);
 })
