@@ -25,7 +25,7 @@ export const handleSubmit = (event) => {
     }
 
     //call function getAnalys to send request to the server
-    Client.getAnalys('http://localhost:8081/analys', data)
+    Client.getAnalys('/analys', data)
     .then(function(res) {
         //update UI according to response
         Client.updateUI(res);
