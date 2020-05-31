@@ -33,7 +33,7 @@ app.listen(8081, function () {
 app.post('/analys', function (req, res) {
     textapi.sentiment(req.body, function(error, response) {
         if (error === null) {
-            res.send(response);
+            res.status(200).send(response);
         } else {
             res.status(422).send(error);
         }
