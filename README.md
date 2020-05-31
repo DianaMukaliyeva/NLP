@@ -8,6 +8,8 @@ This project give pertinent information about the article, like whether the cont
 
 ## Getting started
 
+Click [here](https://infinite-island-70911.herokuapp.com/).
+
 ### Installing Dependencies
 
 #### Installing Node and NPM
