@@ -6,8 +6,6 @@ const aylien = require("aylien_textapi");
 const cors = require("cors");
 const bodyParser = require('body-parser');
 
-const port = 8081;
-
 // Setup dotenv
 const dotenv = require('dotenv');
 dotenv.config();
@@ -50,6 +48,6 @@ app.post('/analys', function (req, res) {
 })
 
 // Setup Server
-app.listen(port, function () {
-    console.log(`NLP app listening on port ${port}!`);
+app.listen(8081, function () {
+    console.log(`NLP app listening on port 8081!`);
 })
